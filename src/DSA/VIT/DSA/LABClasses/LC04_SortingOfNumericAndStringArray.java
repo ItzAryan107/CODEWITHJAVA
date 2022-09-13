@@ -10,49 +10,57 @@ public class LC04_SortingOfNumericAndStringArray {
     String[] stringArray;
 
     LC04_SortingOfNumericAndStringArray(){
-        System.out.println("Enter String or length of Integer Array --->");
         try{
-            String string = sc.nextLine();
-//            int countSpace = 0;
-//
-//            if (string.charAt(0) == ' ')
-//                countSpace = -1;
-//
-//            for (int i = 0;i<string.length()-1;i++){
-//                if (string.charAt(i) ==' '&& string.charAt(i+1) != ' ')
-//                    countSpace = countSpace+1;
-//            }
-//            stringArrayBuilt(countSpace+1,string);
-        }catch (InputMismatchException e){
-            integerArray = new int[sc.nextInt()];
+            int a = sc.nextInt();
+            integerArray = new int[a];
 
-            System.out.println("Enter data of Array --->");
-            for (int i = 0; i< integerArray.length; i++){
+            System.out.printf("Enter %d elements ---> ",a);
+            for (int i = 0; i< integerArray.length; i++) {
                 integerArray[i] = sc.nextInt();
             }
 
-//            sortingNumericArray();
+            sortingNumericArray();
+
+        }catch (InputMismatchException e){
+            String string = sc.nextLine();
+            int countSpace = 0;
+
+            if (string.charAt(0) == ' ')
+                countSpace = -1;
+
+            for (int i = 0;i<string.length()-1;i++){
+                if (string.charAt(i) ==' '&& string.charAt(i+1) != ' ')
+                    countSpace = countSpace+1;
+            }
+
+            stringArrayBuilt(countSpace+1,string);
         }
     }
 
     private void stringArrayBuilt(int countSpace, String string){
-        stringArray = new String[countSpace+1];
+        stringArray = new String[countSpace];
         int index = 0;
         String newString = "";
+
+
         for (int i = 0; i<string.length();i++){
 
-            int j;
-            for (j = i;j<string.length();j++){
-                if (string.charAt(j) == ' ')
-                    break;
+            if (string.charAt(i) !=' '){
+                int j;
+                for (j = i;j<string.length();j++){
+                    if (string.charAt(j) == ' ')
+                        break;
 
-                newString = newString+string.charAt(j);
+                    newString = newString + string.charAt(j);
+                }
+                stringArray[index] = newString;
+                index++;
+                newString = "";
+                i = j;
             }
-            stringArray[index] = newString;
-            index++;
-            newString="";
-            i=j;
         }
+
+
         sortingStringArray();
 
         System.out.print("Sorted Array ---> [");
@@ -87,7 +95,7 @@ public class LC04_SortingOfNumericAndStringArray {
             }
         }
 
-        System.out.println("Sorted Array ---> [");
+        System.out.print("Sorted Array ---> [");
         for (int i = 0;i<integerArray.length-1;i++){
             System.out.print(integerArray[i]+" ");
         }
@@ -95,8 +103,7 @@ public class LC04_SortingOfNumericAndStringArray {
     }
 
     public static void main(String[] args) {
+        System.out.println("Enter\nStatement\tOR\tInteger Array --->\n");
         LC04_SortingOfNumericAndStringArray test = new LC04_SortingOfNumericAndStringArray();
     }
-
-
 }
