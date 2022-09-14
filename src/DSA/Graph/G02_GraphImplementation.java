@@ -52,6 +52,7 @@ public class G02_GraphImplementation<T> {
 
     public void printGraph(){
         printGraph(head);
+        System.out.println();
     }
     private void printGraph(G01_Node<T> root){
 
