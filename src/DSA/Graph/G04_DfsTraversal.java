@@ -71,5 +71,6 @@ public class G04_DfsTraversal<T> extends G02_GraphImplementation<T>{
         g04_dfsTraversal.printGraph();
 
         g04_dfsTraversal.dfsRecursiveTraversal(5);
+
     }
 }

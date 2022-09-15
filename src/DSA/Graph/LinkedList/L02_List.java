@@ -1,15 +1,15 @@
 package DSA.Graph.LinkedList;
 
 public class L02_List<T> {
-    public L01_Node<T> head;
+    public DSA.Graph.LinkedList.L01_Node<T> head;
     private int size = 0;
 
     public void add(T data){
 
-        L01_Node<T> newNode = null;
+        DSA.Graph.LinkedList.L01_Node<T> newNode = null;
 
         if (data != null) {
-            newNode = new L01_Node<>(data);
+            newNode = new DSA.Graph.LinkedList.L01_Node<>(data);
             size++;
         }
 
@@ -18,7 +18,7 @@ public class L02_List<T> {
             return;
         }
 
-        L01_Node<T> currentNode = head;
+        DSA.Graph.LinkedList.L01_Node<T> currentNode = head;
 
         while (currentNode.next!=null){ // checking for all orther node leaving last
             if (currentNode.data == data)
@@ -38,7 +38,7 @@ public class L02_List<T> {
     public T get(int index){
         return get(index,head);
     }
-    private T get(int index, L01_Node<T> head){
+    private T get(int index, DSA.Graph.LinkedList.L01_Node<T> head){
         if (index == 0)
             return head.data;
 //        index--;
@@ -54,12 +54,10 @@ public class L02_List<T> {
             currentNode=currentNode.next;
         }
         return false;
+        
     }
 
     public boolean isEmpty(){
-        if (head == null)
-            return true;
-
-        return false;
+        return head == null;
     }
 }
