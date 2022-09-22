@@ -1,4 +1,4 @@
-package DataStructureAndAlgorithum.VIT.DSA.LABClasses;
+package DataStructureAndAlgorithum.VITAP.LABClasses;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
