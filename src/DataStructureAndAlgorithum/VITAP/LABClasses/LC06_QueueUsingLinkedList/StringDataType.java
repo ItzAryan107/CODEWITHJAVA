@@ -1,17 +1,18 @@
-package DataStructureAndAlgorithum.VITAP.LABClasses.QueueUsingLinkedList;
+package DataStructureAndAlgorithum.VITAP.LABClasses.LC06_QueueUsingLinkedList;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class IntegerDataType {
+public class StringDataType {
 
     private final Scanner sc = new Scanner(System.in);
-    private final LC06_Queue<Integer> integerType = new LC06_Queue<>();
+    private final LC06_Queue<String> stringType = new LC06_Queue<>();
 
-    private Integer input(){
+
+    private String input(){
         Scanner scanner = new Scanner(System.in);
         try{
-            return scanner.nextInt();
+            return scanner.nextLine();
         }catch (InputMismatchException e){
             System.out.println("Error!! --- the entered value is either invalid or out of chosen range!! ");
             System.out.print("Enter the valid input ---> ");
@@ -25,24 +26,23 @@ public class IntegerDataType {
         switch (a){
             case 1 ->{
                 System.out.print("Enter data ---> ");
-                integerType.enQueue(input());
+                stringType.enQueue(input());
                 System.out.println();
             }
 
-            case 2 -> integerType.deQueue();
-            case 3 -> integerType.peek();
+            case 2 -> stringType.deQueue();
+            case 3 -> stringType.peek();
 
-            case 4 -> System.out.println(integerType.getRear());
-            case 5 -> System.out.println(integerType.isEmpty());
+            case 4 -> System.out.println(stringType.getRear());
+            case 5 -> System.out.println(stringType.isEmpty());
 
-            case 6 -> integerType.display();
+            case 6 -> stringType.display();
         }
 
     }
-
-    public void integerType(){
-        integerType.operationsToPerform();
-        integerType.operationToBePerform();
+    public void stringType(){
+        stringType.operationsToPerform();
+        stringType.operationToBePerform();
         System.out.println();
         System.out.print("Enter choice ---> ");
         while (true) {
@@ -51,11 +51,11 @@ public class IntegerDataType {
             if (a == 7)
                 break;
 
-            if (integerType.head == null){
+            if (stringType.head == null){
                 if (a == 1 || a == 5){
                     operations(a);
-                    if (!integerType.isEmpty()) {
-                        integerType.operationToBePerform();
+                    if (!stringType.isEmpty()) {
+                        stringType.operationToBePerform();
                     }
                     System.out.print("Enter Choice ---> ");
                 }else
@@ -66,12 +66,12 @@ public class IntegerDataType {
             else {
                 operations(a);
 
-                if (a == 2 && integerType.isEmpty()){
-                    integerType.operationToBePerform();
+                if (a == 2 && stringType.isEmpty()){
+                    stringType.operationToBePerform();
                 }
 
-                if (!integerType.isEmpty()) {
-                    integerType.operationToBePerform();
+                if (!stringType.isEmpty()) {
+                    stringType.operationToBePerform();
                 }
                 System.out.print("Enter Choice ---> ");
             }

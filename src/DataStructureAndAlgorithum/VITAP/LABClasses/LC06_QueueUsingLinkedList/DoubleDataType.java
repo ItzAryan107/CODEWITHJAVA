@@ -1,18 +1,18 @@
-package DataStructureAndAlgorithum.VITAP.LABClasses.QueueUsingLinkedList;
+package DataStructureAndAlgorithum.VITAP.LABClasses.LC06_QueueUsingLinkedList;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class FloatDataType {
+public class DoubleDataType {
 
-    private final LC06_Queue<Float> floatDataType = new LC06_Queue<>();
+    private final LC06_Queue<Double> byteDataType = new LC06_Queue<>();
 
     private final Scanner sc = new Scanner(System.in);
 
-    private Float takeInput(){
+    private Double takeInput(){
         Scanner scanner =new Scanner(System.in);
         try {
-            return scanner.nextFloat();
+            return scanner.nextDouble();
         }catch (InputMismatchException e){
             System.out.println("Error!!");
             System.out.print("Enter the value in chosen range ---> ");
@@ -24,24 +24,24 @@ public class FloatDataType {
         switch (a){
             case 1 ->{
                 System.out.print("Enter data ---> ");
-                floatDataType.enQueue(takeInput());
+                byteDataType.enQueue(takeInput());
                 System.out.println();
             }
 
-            case 2 -> floatDataType.deQueue();
-            case 3 -> floatDataType.peek();
+            case 2 -> byteDataType.deQueue();
+            case 3 -> byteDataType.peek();
 
-            case 4 -> System.out.println(floatDataType.getRear());
-            case 5 -> System.out.println(floatDataType.isEmpty());
+            case 4 -> System.out.println(byteDataType.getRear());
+            case 5 -> System.out.println(byteDataType.isEmpty());
 
-            case 6 -> floatDataType.display();
+            case 6 -> byteDataType.display();
         }
 
     }
 
-    public void floatType(){
-        floatDataType.operationsToPerform();
-        floatDataType.operationToBePerform();
+    public void doubleType(){
+        byteDataType.operationsToPerform();
+        byteDataType.operationToBePerform();
         System.out.println();
         System.out.print("Enter choice ---> ");
         while (true) {
@@ -50,11 +50,11 @@ public class FloatDataType {
             if (a == 7)
                 break;
 
-            if (floatDataType.head == null){
+            if (byteDataType.head == null){
                 if (a == 1 || a == 5){
                     operations(a);
-                    if (!floatDataType.isEmpty()) {
-                        floatDataType.operationToBePerform();
+                    if (!byteDataType.isEmpty()) {
+                        byteDataType.operationToBePerform();
                     }
                     System.out.print("Enter Choice ---> ");
                 }else
@@ -65,12 +65,12 @@ public class FloatDataType {
             else {
                 operations(a);
 
-                if (a == 2 && floatDataType.isEmpty()){
-                    floatDataType.operationToBePerform();
+                if (a == 2 && byteDataType.isEmpty()){
+                    byteDataType.operationToBePerform();
                 }
 
-                if (!floatDataType.isEmpty()) {
-                    floatDataType.operationToBePerform();
+                if (!byteDataType.isEmpty()) {
+                    byteDataType.operationToBePerform();
                 }
                 System.out.print("Enter Choice ---> ");
             }

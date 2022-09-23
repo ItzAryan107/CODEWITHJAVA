@@ -1,45 +1,47 @@
-package DataStructureAndAlgorithum.VITAP.LABClasses.QueueUsingLinkedList;
+package DataStructureAndAlgorithum.VITAP.LABClasses.LC06_QueueUsingLinkedList;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class ByteDataType {
-    private final LC06_Queue<Byte> byteDataType = new LC06_Queue<>();
+public class LongDataType {
+    private final LC06_Queue<Long> longDataType = new LC06_Queue<>();
 
     private final Scanner sc = new Scanner(System.in);
 
-    private byte takeInput(){
+    private long takeInput(){
         Scanner scanner =new Scanner(System.in);
         try {
-            return scanner.nextByte();
+            return scanner.nextLong();
         }catch (InputMismatchException e){
+            System.out.println("Error!!");
             System.out.print("Enter the value in chosen range ---> ");
             return takeInput();
         }
     }
+
     private void operations(int a){
 
         switch (a){
             case 1 ->{
                 System.out.print("Enter data ---> ");
-                byteDataType.enQueue(takeInput());
+                longDataType.enQueue(takeInput());
                 System.out.println();
             }
 
-            case 2 -> byteDataType.deQueue();
-            case 3 -> byteDataType.peek();
+            case 2 -> longDataType.deQueue();
+            case 3 -> longDataType.peek();
 
-            case 4 -> System.out.println(byteDataType.getRear());
-            case 5 -> System.out.println(byteDataType.isEmpty());
+            case 4 -> System.out.println(longDataType.getRear());
+            case 5 -> System.out.println(longDataType.isEmpty());
 
-            case 6 -> byteDataType.display();
+            case 6 -> longDataType.display();
         }
 
     }
 
-    public void byteType(){
-        byteDataType.operationsToPerform();
-        byteDataType.operationToBePerform();
+    public void longType(){
+        longDataType.operationsToPerform();
+        longDataType.operationToBePerform();
         System.out.println();
         System.out.print("Enter choice ---> ");
         while (true) {
@@ -48,11 +50,11 @@ public class ByteDataType {
             if (a == 7)
                 break;
 
-            if (byteDataType.head == null){
+            if (longDataType.head == null){
                 if (a == 1 || a == 5){
                     operations(a);
-                    if (!byteDataType.isEmpty()) {
-                        byteDataType.operationToBePerform();
+                    if (!longDataType.isEmpty()) {
+                        longDataType.operationToBePerform();
                     }
                     System.out.print("Enter Choice ---> ");
                 }else
@@ -63,15 +65,16 @@ public class ByteDataType {
             else {
                 operations(a);
 
-                if (a == 2 && byteDataType.isEmpty()){
-                    byteDataType.operationToBePerform();
+                if (a == 2 && longDataType.isEmpty()){
+                    longDataType.operationToBePerform();
                 }
 
-                if (!byteDataType.isEmpty()) {
-                    byteDataType.operationToBePerform();
+                if (!longDataType.isEmpty()) {
+                    longDataType.operationToBePerform();
                 }
                 System.out.print("Enter Choice ---> ");
             }
+
         }
     }
 }

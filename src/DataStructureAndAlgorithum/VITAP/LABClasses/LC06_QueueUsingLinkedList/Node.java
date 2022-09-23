@@ -1,4 +1,4 @@
-package DataStructureAndAlgorithum.VITAP.LABClasses.QueueUsingLinkedList;
+package DataStructureAndAlgorithum.VITAP.LABClasses.LC06_QueueUsingLinkedList;
 
 public class Node<P> {
     public P data;
