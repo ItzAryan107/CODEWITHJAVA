@@ -6,7 +6,15 @@ import java.util.Scanner;
 public class CharacterDataType {
     private final LC06_Queue<Character> CharacterDataType = new LC06_Queue<>();
 
-    private final Scanner sc = new Scanner(System.in);
+    private int choiceInput(){
+        Scanner scanner = new Scanner(System.in);
+        try {
+            return scanner.nextInt();
+        }catch (InputMismatchException e){
+            System.out.print("Enter valid Input ---> ");
+            return choiceInput();
+        }
+    }
 
     private Character takeInput(){
         Scanner scanner =new Scanner(System.in);
@@ -49,7 +57,7 @@ public class CharacterDataType {
         System.out.print("Enter choice ---> ");
         while (true) {
 
-            int a = sc.nextInt();
+            int a = choiceInput();
             if (a == 7)
                 break;
 

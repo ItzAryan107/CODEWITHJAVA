@@ -7,7 +7,15 @@ public class DoubleDataType {
 
     private final LC06_Queue<Double> byteDataType = new LC06_Queue<>();
 
-    private final Scanner sc = new Scanner(System.in);
+    private int choiceInput(){
+        Scanner scanner = new Scanner(System.in);
+        try {
+            return scanner.nextInt();
+        }catch (InputMismatchException e){
+            System.out.print("Enter valid Input ---> ");
+            return choiceInput();
+        }
+    }
 
     private Double takeInput(){
         Scanner scanner =new Scanner(System.in);
@@ -46,7 +54,7 @@ public class DoubleDataType {
         System.out.print("Enter choice ---> ");
         while (true) {
 
-            int a = sc.nextInt();
+            int a = choiceInput();
             if (a == 7)
                 break;
 

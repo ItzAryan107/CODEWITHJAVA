@@ -4,7 +4,15 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ShortDataType {
-    private final Scanner sc = new Scanner(System.in);
+    private int choiceInput(){
+        Scanner scanner = new Scanner(System.in);
+        try {
+            return scanner.nextInt();
+        }catch (InputMismatchException e){
+            System.out.print("Enter valid Input ---> ");
+            return choiceInput();
+        }
+    }
     private final LC06_Queue<Short> shortType = new LC06_Queue<>();
 
     private Short input(){
@@ -46,7 +54,7 @@ public class ShortDataType {
         System.out.print("Enter choice ---> ");
         while (true) {
 
-            int a = sc.nextInt();
+            int a = choiceInput();
             if (a == 7)
                 break;
 

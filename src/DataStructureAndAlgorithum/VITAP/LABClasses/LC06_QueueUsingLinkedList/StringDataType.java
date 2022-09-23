@@ -5,7 +5,15 @@ import java.util.Scanner;
 
 public class StringDataType {
 
-    private final Scanner sc = new Scanner(System.in);
+    private int choiceInput(){
+        Scanner scanner = new Scanner(System.in);
+        try {
+            return scanner.nextInt();
+        }catch (InputMismatchException e){
+            System.out.print("Enter valid Input ---> ");
+            return choiceInput();
+        }
+    }
     private final LC06_Queue<String> stringType = new LC06_Queue<>();
 
 
@@ -47,7 +55,7 @@ public class StringDataType {
         System.out.print("Enter choice ---> ");
         while (true) {
 
-            int a = sc.nextInt();
+            int a = choiceInput();
             if (a == 7)
                 break;
 
