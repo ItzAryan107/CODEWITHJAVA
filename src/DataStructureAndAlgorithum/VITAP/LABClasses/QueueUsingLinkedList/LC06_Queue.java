@@ -1,7 +1,5 @@
 package DataStructureAndAlgorithum.VITAP.LABClasses.QueueUsingLinkedList;
 
-import DataStructureAndAlgorithum.VITAP.LABClasses.Node;
-
 import java.util.Scanner;
 
 public class LC06_Queue<P> {
