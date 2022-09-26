@@ -30,16 +30,12 @@ public class LC07_StackUsingArray {
 
 
     private boolean isEmpty(){
-
         return filledIndex == -1;
-
     }
 
 
     private int peek(){
-
         return array[filledIndex];
-
     }
 
 
@@ -47,7 +43,7 @@ public class LC07_StackUsingArray {
 
         System.out.print("[");
         for (int i = filledIndex;i>0;i--){
-            System.out.print(array[filledIndex]+" ");
+            System.out.print(array[i]+" ");
         }
         System.out.println(array[0]+"]");
 
