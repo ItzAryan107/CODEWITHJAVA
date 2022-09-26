@@ -1,15 +1,15 @@
 package DataStructureAndAlgorithum.Graph.LinkedList;
-
+import DataStructureAndAlgorithum.Graph.LinkedList.L01_Node;
 public class L02_List<T> {
-    public DataStructureAndAlgorithum.Graph.LinkedList.L01_Node<T> head;
+    public L01_Node<T> head;
     private int size = 0;
 
     public void add(T data){
 
-        DataStructureAndAlgorithum.Graph.LinkedList.L01_Node<T> newNode = null;
+        L01_Node<T> newNode = null;
 
         if (data != null) {
-            newNode = new DataStructureAndAlgorithum.Graph.LinkedList.L01_Node<>(data);
+            newNode = new L01_Node<>(data);
             size++;
         }
 
@@ -18,7 +18,7 @@ public class L02_List<T> {
             return;
         }
 
-        DataStructureAndAlgorithum.Graph.LinkedList.L01_Node<T> currentNode = head;
+        L01_Node<T> currentNode = head;
 
         while (currentNode.next!=null){ // checking for all orther node leaving last
             if (currentNode.data == data)
@@ -38,7 +38,7 @@ public class L02_List<T> {
     public T get(int index){
         return get(index,head);
     }
-    private T get(int index, DataStructureAndAlgorithum.Graph.LinkedList.L01_Node<T> head){
+    private T get(int index, L01_Node<T> head){
         if (index == 0)
             return head.data;
 //        index--;
