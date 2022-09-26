@@ -1,5 +1,5 @@
 package DataStructureAndAlgorithum.Graph.LinkedList;
-import DataStructureAndAlgorithum.Graph.LinkedList.L01_Node;
+
 public class L02_List<T> {
     public L01_Node<T> head;
     private int size = 0;
@@ -41,7 +41,6 @@ public class L02_List<T> {
     private T get(int index, L01_Node<T> head){
         if (index == 0)
             return head.data;
-//        index--;
         return get(--index,head.next);
     }
 
