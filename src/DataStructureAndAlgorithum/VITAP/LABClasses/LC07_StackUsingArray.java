@@ -93,8 +93,9 @@ public class LC07_StackUsingArray {
     private int input(){
         Scanner scanner = new Scanner(System.in);
 
-        int a = scanner.nextInt();
+
         try {
+            int a = scanner.nextInt();
 
             if (check)
                 return a;
