@@ -1,11 +1,11 @@
 package DataStructureAndAlgorithum.LinkedList.DoubleLinearLinkedList;
 
 public class Node<T> {
-    T data;
-    Node<T> previous;
-    Node<T> next;
+    public T data;
+    public Node<T> previous;
+    public Node<T> next;
 
-    Node(T data){
+    public Node(T data){
         this.data = data;
         previous = null;
         next = null;
