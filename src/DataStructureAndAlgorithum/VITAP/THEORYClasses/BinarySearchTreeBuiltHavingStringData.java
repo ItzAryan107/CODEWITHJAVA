@@ -1,6 +1,5 @@
 package DataStructureAndAlgorithum.VITAP.THEORYClasses;
 
-import java.util.Objects;
 
 public class BinarySearchTreeBuiltHavingStringData {
     static class Node{
@@ -68,6 +67,8 @@ public class BinarySearchTreeBuiltHavingStringData {
         binarySearchTreeBuiltHavingStringData.treeBuilt("ZAT");
         binarySearchTreeBuiltHavingStringData.treeBuilt("CAT");
         binarySearchTreeBuiltHavingStringData.treeBuilt("PAT");
+        binarySearchTreeBuiltHavingStringData.treeBuilt("FAT");
+        binarySearchTreeBuiltHavingStringData.treeBuilt("JAT");
         binarySearchTreeBuiltHavingStringData.display();
     }
 }
