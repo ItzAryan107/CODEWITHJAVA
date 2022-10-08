@@ -19,7 +19,22 @@ public class BinarySearchTreeBuiltHavingStringData {
         if (data.equals(root.data))
             return;
 
-        if (data.charAt(0) < root.data.charAt(0)){
+        int i = 0;
+        try {
+
+            while (data.charAt(i) == root.data.charAt(i))
+                i++;
+
+        }catch (Exception e){
+            if (data.length()<root.data.length())
+                data = data+" ";
+            else
+                root.data = root.data + " ";
+        }
+
+        if (data.charAt(i) < root.data.charAt(i)){
+            data = data.replaceAll(" ","");
+            root.data = root.data.replaceAll(" ","");
             if (root.left == null){
                 root.left = new Node(data);
                 return;
@@ -28,7 +43,9 @@ public class BinarySearchTreeBuiltHavingStringData {
             treeBuilt(data,root.left);
         }
 
-        if (data.charAt(0) > root.data.charAt(0)){
+        if (data.charAt(i) > root.data.charAt(i)){
+            data = data.replaceAll(" ","");
+            root.data = root.data.replaceAll(" ","");
             if (root.right == null){
                 root.right = new Node(data);
                 return;
@@ -62,13 +79,19 @@ public class BinarySearchTreeBuiltHavingStringData {
     public static void main(String[] args) {
         BinarySearchTreeBuiltHavingStringData binarySearchTreeBuiltHavingStringData = new BinarySearchTreeBuiltHavingStringData();
         binarySearchTreeBuiltHavingStringData.treeBuilt("HAT");
-        binarySearchTreeBuiltHavingStringData.treeBuilt("MAT");
+        binarySearchTreeBuiltHavingStringData.treeBuilt("HATE");
+        binarySearchTreeBuiltHavingStringData.treeBuilt("AATREAN");
+        binarySearchTreeBuiltHavingStringData.treeBuilt("AAT");
+        binarySearchTreeBuiltHavingStringData.treeBuilt("SAT");
         binarySearchTreeBuiltHavingStringData.treeBuilt("SAT");
         binarySearchTreeBuiltHavingStringData.treeBuilt("ZAT");
         binarySearchTreeBuiltHavingStringData.treeBuilt("CAT");
         binarySearchTreeBuiltHavingStringData.treeBuilt("PAT");
+        binarySearchTreeBuiltHavingStringData.treeBuilt("MAT");
         binarySearchTreeBuiltHavingStringData.treeBuilt("FAT");
         binarySearchTreeBuiltHavingStringData.treeBuilt("JAT");
+        binarySearchTreeBuiltHavingStringData.treeBuilt("MATERNAL");
+        binarySearchTreeBuiltHavingStringData.treeBuilt("SATURDAY");
         binarySearchTreeBuiltHavingStringData.display();
     }
 }
