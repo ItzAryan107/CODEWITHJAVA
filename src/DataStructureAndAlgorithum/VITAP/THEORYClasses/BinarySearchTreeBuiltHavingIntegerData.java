@@ -15,37 +15,37 @@ public class BinarySearchTreeBuiltHavingIntegerData {
 
     Node root;
 
-    public void treeBuilt(int data, Node root){
-        if (data == root.data)
-            return;
-
-        if (data<root.data) {
-            if (root.left == null){
-                root.left = new Node(data);
-                return;
-            }
-            treeBuilt(data,root.left);
-        }
-
-        if (data> root.data) {
-            if (root.right == null) {
-                root.right = new Node(data);
-                return;
-            }
-            treeBuilt(data, root.right);
-        }
-    }
-
-    public void treeBuilt(int data){
-        if (root == null){
+    private void treeBuilt(int data, Node rootNode){
+        if (rootNode == null){
             root = new Node(data);
             return;
         }
 
+        if (data == rootNode.data)
+            return;
+
+        if (data<rootNode.data) {
+            if (rootNode.left == null){
+                rootNode.left = new Node(data);
+                return;
+            }
+            treeBuilt(data,rootNode.left);
+        }
+
+        if (data> rootNode.data) {
+            if (rootNode.right == null) {
+                rootNode.right = new Node(data);
+                return;
+            }
+            treeBuilt(data, rootNode.right);
+        }
+    }
+
+    public void treeBuilt(int data){
         treeBuilt(data,root);
     }
 
-    public void display(Node root){
+    private void display(Node root){
         if (root == null)
             return;
 
