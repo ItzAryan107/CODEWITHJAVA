@@ -4,12 +4,18 @@ import java.util.Scanner;
 
 public class TWG03_PostOrderTreeBuilt {
 
+    /**
+     * it will first great node nad it will start filling the data in postorder traversal
+     * 1 means to make a node
+     * -1 means that the next node is null
+     */
+
     Scanner sc = new Scanner(System.in);
-    int data = -1;
+    int data = 0;
     public TWG01_Node pushRecursively(){
 
         int n = sc.nextInt();
-        if (n == 0)
+        if (n == -1)
             return null;
         TWG01_Node root = new TWG01_Node(data);
         if (n == 1)
