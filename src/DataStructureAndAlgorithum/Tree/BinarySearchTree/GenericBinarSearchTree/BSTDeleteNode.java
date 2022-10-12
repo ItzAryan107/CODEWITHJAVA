@@ -16,6 +16,8 @@ public class BSTDeleteNode<P extends Number> {
 
     public P deleteNode(P data, Node<P> root){
         if (data.doubleValue()<root.data.doubleValue()){
+            if (root.left == null)
+                return null;
             if (root.left.data.equals(data)){
                 P deletedData = root.left.data;
                 if (root.left.left == null && root.left.right == null){
@@ -32,6 +34,8 @@ public class BSTDeleteNode<P extends Number> {
         }
 
         if (data.doubleValue()>root.data.doubleValue()){
+            if (root.right == null)
+                return null;
             if (root.right.data.equals(data)){
                 P deletedData = root.right.data;
                 if (root.right.right == null && root.right.left ==null)
@@ -96,7 +100,10 @@ public class BSTDeleteNode<P extends Number> {
         bstDeleteNode.root = bstBuilt.root;
         bstDeleteNode.display();
         System.out.println();
-        System.out.println("Deleted Node ---> "+ bstDeleteNode.deleteNode(2));
+        if (bstDeleteNode.deleteNode(2) == null)
+            System.out.println("The element you want to delete is already not present in the tree!!");
+        else
+            System.out.println("Deleted Node ---> "+ 2);
         bstDeleteNode.display();
     }
 }
