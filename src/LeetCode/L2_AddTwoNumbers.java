@@ -12,7 +12,7 @@ package LeetCode;
  * Output: [7,0,8]
  * Explanation: 342 + 465 = 807.
  */
-public class AddTwoNumbers {
+public class L2_AddTwoNumbers {
     static class ListNode{
         int val;
         ListNode next;

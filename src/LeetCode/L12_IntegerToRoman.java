@@ -1,6 +1,6 @@
 package LeetCode;
 
-public class IntegerToRoman {
+public class L12_IntegerToRoman {
     public String integerConversion(int num){
         if (num == 0)//base case
             return "";

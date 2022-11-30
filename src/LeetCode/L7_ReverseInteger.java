@@ -1,7 +1,7 @@
 package LeetCode;
 import java.util.Scanner;
 
-public class ReverseInteger {
+public class L7_ReverseInteger {
     public boolean inRange(int num){
         return num >= Integer.MIN_VALUE / 10 && num <= Integer.MAX_VALUE / 10;
     }
@@ -32,7 +32,7 @@ public class ReverseInteger {
 //    }
 
     public static void main(String[] args){
-        ReverseInteger test = new ReverseInteger();
+        L7_ReverseInteger test = new L7_ReverseInteger();
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println(test.reverse(n));
