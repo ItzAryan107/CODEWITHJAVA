@@ -5,6 +5,8 @@ To Find the length of The Longest word in the given sentence/String
  */
 
 
+import java.util.Scanner;
+
 public class L58_Variation {
 
     int big = 0;
@@ -26,4 +28,5 @@ public class L58_Variation {
         word = word + string.charAt(i);
         return longestWord(string,++i);
     }
+
 }
