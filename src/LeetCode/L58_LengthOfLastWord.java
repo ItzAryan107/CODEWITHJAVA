@@ -37,7 +37,7 @@ Constraints:
 
 import java.util.LinkedList;
 
-public class L58_LengthOfLargestWord {
+public class L58_LengthOfLastWord {
     LinkedList<String> list = new LinkedList<>();
     String word = "";
     public void allWords(String string, int i){
